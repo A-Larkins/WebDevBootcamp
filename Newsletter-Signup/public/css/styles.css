@@ -1,0 +1,86 @@
+html,
+body {
+  height: 100%;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  color: #0f3057;
+}
+
+body {
+  background-color: #00587a;
+  text-align: center;
+}
+
+h1{
+  font-weight: bold;
+}
+
+a {
+  color:#008891;
+}
+
+.vertical-center {
+  min-height: 90%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.cardImg {
+  height: 50%;
+  width: 50%;
+  padding: 50px 50px;
+
+}
+
+.card-text {
+  text-align: center;
+  margin: 40px 50px;
+}
+
+.card {
+  background-color: #f1f3f8;
+  height: 100%;
+  border-width: 6px;
+  border-color: #0f3057;
+  border-radius: 25px;
+}
+
+.card-body {
+}
+
+.email {
+  width: 70%;
+  margin: 25px auto;
+}
+
+.btn {
+  width: 50%;
+  margin: auto;
+  background-color: #008891;
+  color: #f1f3f8;
+
+}
+
+.btn:hover {
+  background-color: #00587a;
+  color: #f1f3f8;
+}
+
+.left {}
+
+.right {
+
+}
+
+.jumbotron {
+  width: 100%;
+  background-color: #008891;
+}
+
+.container {
+  text-align: center;
+  position: relative;
+
+}
