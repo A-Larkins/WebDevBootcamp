@@ -1,0 +1,25 @@
+body {
+  background-color: #e8ffff;
+}
+
+.profilePic {
+  height: 300px;
+  width: 300px;
+}
+
+hr {
+  border-style: none;
+  border-top-style: dotted;
+  border-color: #41aea9;
+  border-width: 5px;
+  width: 5%;
+
+}
+
+h1 {
+  color: #213e3b
+}
+
+h3 {
+  color: #41aea9
+}
