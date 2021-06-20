@@ -1,0 +1,15 @@
+{
+  "name": "express-prac",
+  "version": "1.0.0",
+  "description": "Practice using node and express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Andrew Larkins",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
