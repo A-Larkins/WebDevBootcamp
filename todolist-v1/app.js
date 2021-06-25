@@ -5,14 +5,16 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+app.set("view engine", "ejs");
+
 app.get("/", function(req, res) {
   var today = new Date();
-  var currentDay = today.getDay();
-  if (currentDay === 6 || currentDay === 0) {
-    res.write("<h1>Yay it's the weekend!</h1>");
-  } else {
-    res.sendFile(__dirname + "/index.html");
-  }
+  var daysOfWeek = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var currentDay = daysOfWeek[ today.getDay() ];
+  res.render("list", {
+    day: currentDay
+  });
+
 });
 
 app.listen(3000, function() {
