@@ -67,16 +67,62 @@ app.route("/articles")
 // specific articles
 app.route("/articles/:articleTitle")
 
-.get(function(req, res) {
-  const articleTitle = req.params.articleTitle;
-  Article.findOne({ title: articleTitle }, function(err, foundArticle) {
-    if(foundArticle) {
-      res.send(foundArticle);
-    } else {
-      res.send("No article with that title was found in DB....")
-    }
+  .get(function(req, res) {
+    const articleTitle = req.params.articleTitle;
+    Article.findOne({
+      title: articleTitle
+    }, function(err, foundArticle) {
+      if (foundArticle) {
+        res.send(foundArticle);
+      } else {
+        res.send("No article with that title was found in DB....")
+      }
+    })
   })
-});
+
+  .put(function(req, res) {
+    Article.update({
+        title: req.params.articleTitle
+      }, {
+        title: req.body.title,
+        content: req.body.content
+      }, {
+        overwrite: true
+      },
+      function(err) {
+        if (!err) {
+          res.send("Successfully updated article...");
+        }
+      });
+  })
+
+  .patch(function(req, res) {
+    Article.update({
+        title: req.params.articleTitle
+      }, {
+        $set: req.body
+      },
+      function(err) {
+        if (!err) {
+          res.send("Successfully updated article...")
+        } else {
+          res.send(err);
+        }
+      }
+    );
+  })
+
+  .delete(function(req, res) {
+    Article.deleteOne({
+      title: req.params.articleTitle
+    }, function(err) {
+      if (!err) {
+        res.send("Successfully deleted article...")
+      } else {
+        res.send(err);
+      }
+    });
+  });
 
 
 
